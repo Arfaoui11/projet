@@ -3,21 +3,29 @@
   <div content class="body py-5 w-100 "  style="overflow: scroll; max-height: 70vh;" >
 
     <div class=" mx-5" >
-      <p class="title-1"> modifier les information du child de l’utilisateur john</p>
+      <p class="title-1"> modifier les informations de l’utilisateur ‘’john’’</p>
       <p class="title-2 ">‘’john’’</p>
 
 
       <div class="body" >
-        <div *ngIf="child" >
+        <div *ngIf="user" >
 
           <!-- Angular material mat-form-field connot be border reduised-->
           <form #f="ngForm"  class=" mt-2  d-flex row  justify-content-center" novalidate>
 
             <div class="d-flex  from-control" >
+              <mdb-form-control class=" mx-2 w-50">
+                <input mdbInput type="text" #username="ngModel" [(ngModel)]="user.username" name="username"  id="f1" class="form-control " disabled required />
+                <label mdbLabel class="form-label" for="f1">Username</label>
+              </mdb-form-control>
+              <mdb-form-control class=" mx-2 w-50">
+                <input mdbInput type="text" #email="ngModel" [(ngModel)]="user.email" name="email"  id="f2" class="form-control " disabled required />
+                <label mdbLabel class="form-label" for="f2">Email</label>
+              </mdb-form-control>
 
               <mdb-form-control class=" mx-2 w-50">
-                <input mdbInput type="text" #last_name="ngModel" [(ngModel)]="child.last_name" name="last_name"  id="f1" class="form-control " [pattern]="namePattern" required />
-                <label mdbLabel class="form-label" for="f1">Nom</label>
+                <input mdbInput type="text" #last_name="ngModel" [(ngModel)]="user.last_name" name="last_name"  id="f3" class="form-control " [pattern]="namePattern" required />
+                <label mdbLabel class="form-label" for="f3">Nom</label>
               </mdb-form-control>
               <div *ngIf="last_name.invalid && last_name.touched" style="color: red">
                 <div *ngIf="last_name.errors?.['required']" class="alert">
@@ -28,8 +36,8 @@
                 </div>
               </div>
               <mdb-form-control class=" mx-2 rounded-5 w-50" >
-                <input mdbInput type="text" #first_name="ngModel"  [(ngModel)]="child.first_name" name="first_name"  id="f2" class="form-control  " [pattern]="namePattern" required />
-                <label mdbLabel class="form-label" for="f2">Prenom</label>
+                <input mdbInput type="text" #first_name="ngModel"  [(ngModel)]="user.first_name" name="first_name"  id="f4" class="form-control  " [pattern]="namePattern" required />
+                <label mdbLabel class="form-label" for="f4">Prenom</label>
               </mdb-form-control>
               <div *ngIf="first_name.invalid && first_name.touched" style="color: red">
                 <div *ngIf="first_name.errors?.['required']" class="alert">
@@ -43,8 +51,8 @@
             <div class="d-flex  from-control mt-2" >
 
               <mdb-form-control class=" mx-2 w-50">
-                <input mdbInput type="date" #birthday="ngModel" [(ngModel)]="child.birthday" name="birthday" id="f3" class="form-control"  required />
-                <label mdbLabel class="form-label" for="f3">birthday</label>
+                <input mdbInput type="date" #birthday="ngModel" [(ngModel)]="user.birthday" name="birthday" id="f5" class="form-control"  required />
+                <label mdbLabel class="form-label" for="f5">birthday</label>
               </mdb-form-control>
 
               <div *ngIf="birthday.invalid && birthday.touched" style="color: red">
@@ -54,12 +62,12 @@
 
               </div>
               <mdb-form-control class=" mx-2 rounded-5 w-50" >
-                <select mdbInput #gender="ngModel" [(ngModel)]="child.gender" name="gender" class="form-control" id="expertise" required >
+                <select mdbInput #gender="ngModel" [(ngModel)]="user.gender" name="gender" class="form-control" id="f6" required >
                   <option value="M"> garçon </option>
                   <option value="F">file </option>
                   <option value="N">Autre </option>
                 </select>
-                <label mdbLabel class="form-label" for="expertise">Gender</label>
+                <label mdbLabel class="form-label" for="f6">Gender</label>
               </mdb-form-control>
               <div *ngIf="gender.invalid && gender.touched" style="color: red">
                 <div *ngIf="gender.errors?.['required']" class="alert">
@@ -71,7 +79,7 @@
 
 
             <div class="form-group   ">
-              <button    class="btn btn-success" (click)="updateChild()"  [disabled]="!f.valid" >Update</button>
+              <button    class="btn btn-success" (click)="updateUser()"  [disabled]="!f.valid" >Update</button>
             </div>
 
           </form>

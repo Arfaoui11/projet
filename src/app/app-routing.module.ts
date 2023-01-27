@@ -8,13 +8,13 @@ const routes: Routes = [
 
 
   {
-    path: 'front',
+    path: 'back',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
 
   {
     path: '',
-    redirectTo: 'front',
+    redirectTo: 'back',
     pathMatch: 'full'
   },
   {

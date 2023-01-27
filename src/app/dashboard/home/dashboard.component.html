@@ -1,0 +1,138 @@
+<div class="global-conatiner">
+
+
+  <mat-drawer-container class="example-container"    autosize >
+
+    <nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top">
+      <div class="container-fluid ">
+        <div class="navbar-header d-flex  align-items-center" >
+          <div>
+            <a class="toggle" (click)="drawer.toggle()" >
+              <svg width="25" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="9.14258" width="22.8571" height="3.04762" rx="1.52381" fill="#4B244A"/>
+                <rect x="4.57129" y="8.04761" width="27.4286" height="3.04762" rx="1.52381" fill="#4B244A"/>
+                <rect y="16.0952" width="32" height="3.04762" rx="1.52381" fill="#4B244A"/>
+              </svg>
+            </a>
+          </div>
+          <div>
+            <p class="top-title ml-4 "> Technical Admin</p>
+            <!-- Brand -->
+
+          </div>
+          <!-- Search form -->
+
+        </div>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            <li >
+              <div class="bg-gray px-4 py-2 bg-light">
+                <button type="button" class="btn btn-primary" mat-raised-button>
+                  Notifications <span class="badge bg-secondary"></span>
+                </button>
+              </div>
+            </li>
+            <li >
+              <div class="bg-gray px-4 py-2 bg-light">
+                <button type="button" class="btn btn-primary">
+                  Back
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <ng-content select="[content]"  ></ng-content>
+
+
+
+    <mat-drawer #drawer   class="example-sidenav" mode="side">
+
+      <ul class="navbar-nav ml-auto  " >
+        <div>
+          <li class="mx-auto px-auto" style="width: 120px">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" fill="#FFFFFF">
+              <path d="M18.5 18h-8C8.019 18 6 15.981 6 13.5v-3C6 8.019 8.019 6 10.5 6h8c2.481 0 4.5 2.019 4.5 4.5v3C23 15.981 20.981 18 18.5 18zM18.5 42h-8C8.019 42 6 39.981 6 37.5v-13c0-2.481 2.019-4.5 4.5-4.5h8c2.481 0 4.5 2.019 4.5 4.5v13C23 39.981 20.981 42 18.5 42zM37.5 42h-8c-2.481 0-4.5-2.019-4.5-4.5v-3c0-2.481 2.019-4.5 4.5-4.5h8c2.481 0 4.5 2.019 4.5 4.5v3C42 39.981 39.981 42 37.5 42zM37.5 28h-8c-2.481 0-4.5-2.019-4.5-4.5v-13C25 8.019 27.019 6 29.5 6h8c2.481 0 4.5 2.019 4.5 4.5v13C42 25.981 39.981 28 37.5 28z" fill="#FFFFFF" />
+            </svg>
+
+            <span class="nav-item-text " style="position: center"> Dashboards </span>
+          </li>
+          <li class="active-border">
+            <div class="nav-item active d-flex  align-items-center">
+              <a class="nav-link " [routerLink]="['/back/listChild']"  >
+                <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.25 0C1.00125 0 0 0.99 0 2.2V19.8C0 20.3835 0.237053 20.9431 0.65901 21.3556C1.08097 21.7682 1.65326 22 2.25 22H15.75C16.3467 22 16.919 21.7682 17.341 21.3556C17.7629 20.9431 18 20.3835 18 19.8V6.6L11.25 0H2.25ZM10.125 1.65L16.3125 7.7H10.125V1.65ZM5.54625 11.242H13.5V19.019L11.115 16.687L7.93125 19.8L4.7475 16.687L7.93125 13.585" fill="white"/>
+                </svg>
+                <span class="nav-item-text"> Page 1 </span>
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </li>
+          <li class="">
+            <div class="nav-item  d-flex  align-items-center">
+              <a class="nav-link " [routerLink]="['/back/updateChild']"   >
+                <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.938658 0.195312H14.3613C14.8797 0.195312 15.3 0.622461 15.3 1.14453V17.2461C15.3 17.7699 14.8814 18.1953 14.3613 18.1953H0.938658C0.420111 18.1953 0 17.7682 0 17.2461V1.14453C0 0.620703 0.418573 0.195312 0.938658 0.195312ZM6.28343 1.99355H8.97592V4.69531H6.28343V1.99355ZM4.48829 4.69531V1.99355H1.87732V4.69531H4.48829ZM1.87732 6.49531H4.48829V9.19531H1.87732V6.49531ZM6.28343 6.49531H8.97592V9.19531H6.28343V6.49531ZM10.7711 6.49531V9.19531H13.4611V6.49531H10.7711ZM13.4611 4.69531L13.4638 1.99355H10.7711V4.69531H13.4611ZM13.4611 10.9953L13.4638 16.3936L9.87349 16.3953V13.6953C9.87349 13.1979 9.47052 12.7953 8.9735 12.7953H6.28563C5.78861 12.7953 5.38564 13.1979 5.38564 13.6953V16.3953L1.87732 16.3936V10.9953H13.4611Z" fill="white"/>
+                </svg>
+
+                <span class="nav-item-text"> Page 2</span>
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </li>
+
+          <li >
+            <div class="nav-item  d-flex align-items-center">
+              <a class="nav-link " [routerLink]="['/back/updateUser']"  >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 0C10.1935 0 11.3381 0.474106 12.182 1.31802C13.0259 2.16193 13.5 3.30653 13.5 4.5C13.5 5.69347 13.0259 6.83807 12.182 7.68198C11.3381 8.52589 10.1935 9 9 9C7.80653 9 6.66193 8.52589 5.81802 7.68198C4.97411 6.83807 4.5 5.69347 4.5 4.5C4.5 3.30653 4.97411 2.16193 5.81802 1.31802C6.66193 0.474106 7.80653 0 9 0V0ZM9 11.25C13.9725 11.25 18 13.2637 18 15.75V18H0V15.75C0 13.2637 4.0275 11.25 9 11.25Z" fill="white"/>
+                </svg>
+
+                <span class="nav-item-text"> Page 3 </span>
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </li>
+        </div>
+        <div>
+          <li >
+            <div class="nav-item  d-flex align-items-center">
+              <a class="nav-link " routerLink="/doctor/listDoctor"  >
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.0025 14.85C9.95277 14.85 8.94604 14.4444 8.20377 13.7224C7.4615 13.0003 7.04449 12.0211 7.04449 11C7.04449 9.97892 7.4615 8.99965 8.20377 8.27764C8.94604 7.55562 9.95277 7.15 11.0025 7.15C12.0522 7.15 13.059 7.55562 13.8012 8.27764C14.5435 8.99965 14.9605 9.97892 14.9605 11C14.9605 12.0211 14.5435 13.0003 13.8012 13.7224C13.059 14.4444 12.0522 14.85 11.0025 14.85ZM19.4048 12.067C19.45 11.715 19.4839 11.363 19.4839 11C19.4839 10.637 19.45 10.274 19.4048 9.9L21.7909 8.107C22.0058 7.942 22.0623 7.645 21.9266 7.403L19.6649 3.597C19.5292 3.355 19.2238 3.256 18.975 3.355L16.1592 4.455C15.5712 4.026 14.9605 3.652 14.2481 3.377L13.8296 0.462C13.7844 0.198 13.5469 0 13.2642 0H8.74078C8.45807 0 8.22059 0.198 8.17535 0.462L7.75693 3.377C7.04449 3.652 6.43383 4.026 5.84578 4.455L3.02994 3.355C2.78116 3.256 2.47582 3.355 2.34012 3.597L0.0784041 7.403C-0.0686075 7.645 -0.000755823 7.942 0.214107 8.107L2.60022 9.9C2.55498 10.274 2.52106 10.637 2.52106 11C2.52106 11.363 2.55498 11.715 2.60022 12.067L0.214107 13.893C-0.000755823 14.058 -0.0686075 14.355 0.0784041 14.597L2.34012 18.403C2.47582 18.645 2.78116 18.733 3.02994 18.645L5.84578 17.534C6.43383 17.974 7.04449 18.348 7.75693 18.623L8.17535 21.538C8.22059 21.802 8.45807 22 8.74078 22H13.2642C13.5469 22 13.7844 21.802 13.8296 21.538L14.2481 18.623C14.9605 18.337 15.5712 17.974 16.1592 17.534L18.975 18.645C19.2238 18.733 19.5292 18.645 19.6649 18.403L21.9266 14.597C22.0623 14.355 22.0058 14.058 21.7909 13.893L19.4048 12.067Z" fill="white"/>
+                </svg>
+
+
+                <span class="nav-item-text"> Paramétres </span>
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </li>
+          <li >
+            <div class="nav-item  d-flex align-items-center">
+              <a class="nav-link "  >
+                <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="11" cy="14" r="9.5" stroke="white" stroke-width="3"/>
+                  <path d="M11 12.5L11 4.5" stroke="#552754" stroke-width="8" stroke-linecap="round"/>
+                  <path d="M11 12.5V4.5" stroke="#552754" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M11 12.5V4.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span class="nav-item-text"> Déconnecter </span>
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </li>
+        </div>
+
+
+
+      </ul>
+
+    </mat-drawer>
+  </mat-drawer-container>
+
+</div>
+
